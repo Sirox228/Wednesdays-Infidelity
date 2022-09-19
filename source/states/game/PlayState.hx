@@ -491,8 +491,8 @@ class PlayState extends MusicBeatState
 
 	public var chromTweens:Array<FlxTween> = [];
 
-	public var vhs:VHSEffect;
-	public var distort:DistortionEffect;
+	//public var vhs:VHSEffect;
+	//public var distort:DistortionEffect;
 
 	public var shaderUpdates:Array<Float->Void> = [];
 
@@ -1329,9 +1329,9 @@ class PlayState extends MusicBeatState
 				case 'last-day':
 					if (ClientPrefs.intensiveShaders)
 					{
-							vhs = new util.Shaders.VHSEffect();
+							//vhs = new util.Shaders.VHSEffect();
 
-							addShaderToCamera('camGame', vhs);
+							//addShaderToCamera('camGame', vhs);
 					}
 
 				case 'unknown-suffering':
@@ -1340,17 +1340,17 @@ class PlayState extends MusicBeatState
 					addShaderToCamera("camHUD", chrom);
 					addShaderToCamera("camGame", chrom);
 				case 'wistfulness':
-					distort = new util.Shaders.DistortionEffect(1, 1);
+					//distort = new util.Shaders.DistortionEffect(1, 1);
 
-					distort.shader.working.value = [false];
+					//distort.shader.working.value = [false];
 
-					addShaderToCamera('camGame', distort);
+					//addShaderToCamera('camGame', distort);
 				case 'dejection':
-					distort = new util.Shaders.DistortionEffect(1, 1);
+				        //distort = new util.Shaders.DistortionEffect(1, 1);
 
-					distort.shader.working.value = [false];
+					//distort.shader.working.value = [false];
 
-					addShaderToCamera('camGame', distort);
+					//addShaderToCamera('camGame', distort);
 			}
 		}
 
@@ -5125,21 +5125,21 @@ class PlayState extends MusicBeatState
 			switch (curStep)
 			{
 				case 536:
-					distort.shader.glitchModifier.value = [9];
-					distort.shader.fullglitch.value = [2];
+					//distort.shader.glitchModifier.value = [9];
+					//distort.shader.fullglitch.value = [2];
 
-				    distort.shader.working.value = [true];
+				   // distort.shader.working.value = [true];
 
 				case 544:
-					distort.shader.glitchModifier.value = [1];
-					distort.shader.fullglitch.value = [1];
+					//distort.shader.glitchModifier.value = [1];
+				        //distort.shader.fullglitch.value = [1];
 
 				case 670:
 					camGame.setFilters([]); // Remove shader
 
 					camGameShaders = [];
 
-					distort = null;
+					//distort = null;
 			}
 		}
 
