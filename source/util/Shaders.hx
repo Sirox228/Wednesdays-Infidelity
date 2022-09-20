@@ -116,6 +116,8 @@ class DistortionShader extends FlxShader
 	uniform bool working;
 	uniform float timeMulti;
 	uniform float effectMulti;
+
+        precision highp float;
 	
 	vec3 mod289(vec3 x) {
 		return x - floor(x * (1.0 / 289.0)) * 289.0;
