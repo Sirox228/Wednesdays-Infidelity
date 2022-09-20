@@ -203,7 +203,7 @@ class MainMenuState extends MusicBeatState
 			addShader(chrom);*/
 		}
 
-		doChrome(null, false);
+		//doChrome(null, false);
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
 		bg = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
@@ -787,7 +787,7 @@ class MainMenuState extends MusicBeatState
 		FlxG.camera.setFilters(newCamEffects);
 	}
 
-	function doChrome(T:FlxTimer, ?setChrom:Bool = true)
+	/*function doChrome(T:FlxTimer, ?setChrom:Bool = true)
 	{
 		if (!ClientPrefs.shaders)
 			return;
@@ -805,5 +805,5 @@ class MainMenuState extends MusicBeatState
 				doChrome(tmr, true);
 			});
 		});
-	}
+	}*/
 }
