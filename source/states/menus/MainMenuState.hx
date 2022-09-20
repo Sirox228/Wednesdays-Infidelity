@@ -81,6 +81,8 @@ class MainMenuState extends MusicBeatState
 
         var phantomStar:PhantomStarEffect;
 
+        var bg:FlxSprite;
+
 	var shaders:Array<ShaderEffect> = [];
 
 	function set_keyCombos(newCombos:Map<Array<FlxKey>, Void->Void>):Map<Array<FlxKey>, Void->Void>
@@ -204,7 +206,7 @@ class MainMenuState extends MusicBeatState
 		doChrome(null, false);
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		bg = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
 		bg.scrollFactor.set(0, yScroll);
 		// bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
