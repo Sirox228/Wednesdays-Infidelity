@@ -206,12 +206,12 @@ class MainMenuState extends MusicBeatState
 		//doChrome(null, false);
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		bg = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
-		bg.scrollFactor.set(0, yScroll);
+		bg = new FlxSprite(-80); //.loadGraphic(Paths.image('menuBG'));
+		/*bg.scrollFactor.set(0, yScroll);
 		// bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg.antialiasing = ClientPrefs.globalAntialiasing;*/
                 phantomStar = new PhantomStarEffect(bg.width, bg.height);
                 bg.shader = phantomStar.shader;
 		add(bg);
