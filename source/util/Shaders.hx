@@ -86,7 +86,7 @@ class PhantomStarShader extends FlxShader
 
         void main() {
 	        #pragma body
-            vec2 p = (openfl_TextureCoordv.xy * 2.0 - iResolution.xy) / min(iResolution.x, iResolution.y);
+            vec2 p = ((openfl_TextureCoordv.xy * iResolution.xy) * 2.0 - iResolution.xy) / min(iResolution.x, iResolution.y);
 
             vec3 cPos = vec3(0.0,0.0, -3.0 * iTime);
             // vec3 cPos = vec3(0.3*sin(iTime*0.8), 0.4*cos(iTime*0.3), -6.0 * iTime);
