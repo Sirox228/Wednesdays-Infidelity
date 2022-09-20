@@ -76,8 +76,10 @@ class MainMenuState extends MusicBeatState
 	@:isVar
 	var keyCombos(default, set):Map<Array<FlxKey>, Void->Void> = [];
 
-	var bloom:BloomEffect;
-	var chrom:ChromaticAberrationEffect;
+	/*var bloom:BloomEffect;
+	var chrom:ChromaticAberrationEffect;*/
+
+        var phantomStar:PhantomStarEffect;
 
 	var shaders:Array<ShaderEffect> = [];
 
@@ -190,13 +192,13 @@ class MainMenuState extends MusicBeatState
 		{
 			if (ClientPrefs.intensiveShaders)
 			{
-				bloom = new BloomEffect(5.0);
-				addShader(bloom);
+				/*bloom = new BloomEffect(5.0);
+				addShader(bloom);*/
 			}
 
-			chrom = new ChromaticAberrationEffect();
+			/*chrom = new ChromaticAberrationEffect();
 
-			addShader(chrom);
+			addShader(chrom);*/
 		}
 
 		doChrome(null, false);
@@ -208,6 +210,8 @@ class MainMenuState extends MusicBeatState
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
+                phantomStar = new PhantomStarEffect(bg.width, bg.height);
+                bg.shader = phantomStar;
 		add(bg);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -298,6 +302,8 @@ class MainMenuState extends MusicBeatState
 				FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 			}
 		}
+
+                phantomStar.update(elapsed, bg.width, bg.height);
 		
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 5.6, 0, 1);
 		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
