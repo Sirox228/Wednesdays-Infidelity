@@ -17,7 +17,7 @@ typedef ShaderEffect =
 	var shader:Dynamic;
 }
 
-class PhantomStarEffect
+class PhantomStarEffect extends Effect
 {
 	public var shader:PhantomStarShader;
 
