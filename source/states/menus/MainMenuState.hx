@@ -213,7 +213,7 @@ class MainMenuState extends MusicBeatState
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
                 phantomStar = new PhantomStarEffect(bg.width, bg.height);
-                bg.shader = phantomStar;
+                bg.shader = phantomStar.shader;
 		add(bg);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
